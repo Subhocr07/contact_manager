@@ -8,7 +8,7 @@ require('dotenv').config();
 // const cors = require("cors");
 const  {MONGOURI}=require("./keys");
 
-const importController=require("./routes/import");
+const importController=require("./user/routes/import");
 const checkExistingUser=require("./user/utility")
 const signupModal=require("./user/modals/signup-model")
 

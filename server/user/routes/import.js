@@ -31,7 +31,11 @@ router.post("/add",(req,res)=>{
 });
 
 router.get("/delete/:id",(req,res)=>{
-        importModal.deleteOne({})
+        importModal.deleteOne({_id:req.params.id}).then(()=>{
+            res.status(200).send("Successfully deleted ")
+        }).catch((err)=>{
+            res.status(400).send(err)
+        })
 })
 
 module.exports=router;
