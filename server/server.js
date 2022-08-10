@@ -2,12 +2,15 @@
 const express=require("express");
 const mongoose=require('mongoose');
 const app=express();
+const server = express();
 const jwt=require("jsonwebtoken");
 require('dotenv').config();
 // const cors = require("cors");
 const  {MONGOURI}=require("./keys");
 
 const importController=require("./routes/import");
+const checkExistingUser=require("./user/utility")
+const signupModal=require("./user/modals/signup-model")
 
 
 
@@ -46,30 +49,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/import",importController);
-const express = require("express");
-const bcrypt = require("bcryptjs");
-const checkExistingUser=require("./user/utility")
-require("dotenv").config();
-const signupModal=require("./user/modals/signup-model")
-const server = express();
-const jwt = require("jsonwebtoken");
-const mongoose = require("mongoose");
-const cors = require("cors")
-//middleware
-server.use(express.json());
-server.use(express.urlencoded({extended: false}));
-server.use(cors())
-server.listen("3003", (err)=> {
-    if(!err) {
-        console.log("Server started at 3003");
-    }
-});
 
-mongoose.connect("mongodb://localhost:27017", (data)=> {
-    console.log("connected to db")
-}, (err)=> {
-    
-})
 const salt = 10;
 server.post("/signup", async (req,res)=> {
     if(await checkExistingUser(req.body.email)){
