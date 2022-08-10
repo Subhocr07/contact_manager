@@ -5,8 +5,8 @@ const app=express();
 const server = express();
 const jwt=require("jsonwebtoken");
 require('dotenv').config();
-// const cors = require("cors");
-const  {MONGOURI}=require("./keys");
+const bcrypt = require("bcryptjs")
+const cors = require("cors");
 
 const importController=require("./user/routes/import");
 const checkExistingUser=require("./user/utility")
@@ -17,7 +17,7 @@ const signupModal=require("./user/modals/signup-model")
 //server listen
 const PORT=3001;
 
-app.listen(PORT,(err)=>{
+server.listen(PORT,(err)=>{
     if(!err) {
         console.log(`app started at port ${PORT}`)
     }else{
@@ -28,15 +28,14 @@ app.listen(PORT,(err)=>{
 
 //body parser
 
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
-// app.use(multer.array());
-
+server.use(express.json());
+server.use(express.urlencoded({extended: false}));
+server.use(cors())
 //database connection
 
-mongoose.connect(MONGOURI,(err)=>{
+mongoose.connect("mongodb+srv://sougata:project%40123@contactmanager.utz7mbi.mongodb.net/test",(err)=>{
     if(!err) {
-        console.log(`server connected at ${MONGOURI}`)
+        console.log(`server connected at db`)
     }else{
         console.log(err)
     }
@@ -44,11 +43,11 @@ mongoose.connect(MONGOURI,(err)=>{
 
 //get route
 
-app.get("/",(req,res)=>{
+server.get("/",(req,res)=>{
     res.send("contact manager app started")
 })
 
-app.use("/import",importController);
+
 
 const salt = 10;
 server.post("/signup", async (req,res)=> {
@@ -83,4 +82,5 @@ server.post("/login", (req, res)=> {
         }
     })
 });
+server.use("/import",importController);
 
