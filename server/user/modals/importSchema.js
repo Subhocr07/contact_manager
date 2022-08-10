@@ -1,40 +1,43 @@
 const mongoose=require('mongoose'),Schema = mongoose.Schema
 ;
+// const User=require("./signup-model");
 
 
-const importSchema= new mongoose.Schema({
-    // username:{
-    //     type:String,
-    //     required:true,
-    // },
+const importSchema=new mongoose.Schema({
+    username:{
+        type:String,
+        required:true, 
+    },
     name:{
         type:String,
-        // required:true,
+        required:true,
     },
     designation:{
         type:String,
-        // required:true,
+        required:true,
     },
     company:{
         type:String,
-        // required:true,
+        required:true,
     },
     industry:{
         type:String,
-        // required:true,
+        required:true,
     },
     phone_number:{
-        type:String,
-        // required:true,
+        type:Number,
+        required:true,
     },
     country:{
         type:String,
-        // required:true,
+        required:true,
     },
-    // userId:{
-    //     type:Schema.Types.objectId,ref:"User",
-    //  
-    // },
+    userId:{
+        // type:Schema.Types.ObjectId,
+        // ref:'signupModal',
+        type:String,
+        required:true,
+    },
     date: { type: Date, default: Date.now },
 });
 
