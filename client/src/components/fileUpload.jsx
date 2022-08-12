@@ -41,12 +41,12 @@ const Fileupload = () => {
     }
     reader.readAsText(file);
   }
-  console.log(JSON.stringify(csvArray))
+  console.log((csvArray))
 
 
 
   const handleSubmit=()=>{
-    axios.get("http://localhost:3001/",{
+    axios.post("http://localhost:3001/import/add",{
       
     }).then((res)=>{
         console.log(res)
