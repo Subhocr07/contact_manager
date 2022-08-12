@@ -1,7 +1,8 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import './App.css';
 import Login from "./login";
-import Signup from "./signup"
+import Signup from "./signup";
+import Fileupload from "./components/fileUpload.jsx";
 
 function App() {
 return (
@@ -11,6 +12,7 @@ return (
   <Route exact path="/" element={<Login/>}></Route>
   <Route exact path ="/signup" element={<Signup/>}></Route>
   <Route exact path ="/login"  element={<Login/>}></Route>
+  <Route exact path ="/import"  element={<Fileupload/>}></Route>
   </Routes>
   </BrowserRouter>
   </>
