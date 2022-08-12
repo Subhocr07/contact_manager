@@ -27,27 +27,23 @@ const Login =()=>{
   }
     return(
     <>
-    <div className="container">
-    <div className="elipise_up">
-      <img src={Logo} alt="elipse"></img>
-      </div>
-      
-      <div className="container-1">
-        <img src={Box} alt="box" className="box"></img>
-        <h1>LOGO</h1>
-        <h3 className="tittle">Enter your credientials to access your account</h3>
-        <form>
-        <input type="email" placeholder="Mail Id" className="mailid" onChange={(e)=> {setLogin({...login, email: e.target.value})}} ></input>
-        <input type="password" placeholder="password" className="password" onChange={(e)=> {setLogin({...login, password: e.target.value})}} ></input>
-        </form>
-        <button className="signin" onClick={handleLogin}>signin</button>
-        <a href={"./signup"} onClick={Signup}>signup</a>
-        <img src={Box} alt="box" className="box-1"></img>
-      </div>
-      <div className="elipise_down">
-      <img src={logo} alt="elipse"></img>
-      </div>
-      
+     <div className="container">
+        <img src={Logo} alt="elipse-up" className="elipse-up"></img>
+        <img src={logo} alt="elipse-down" className="elipse-down"></img>
+        <div className="container-2">
+          <img src={Box} alt="box" className="box-down"></img>
+          <img src={Box} alt="box" className="box-up"></img>
+          <div className="logo">
+            LOGO
+          </div>
+          <div className="tittle">
+            Enter your credientials to access your account
+          </div>
+          <input type="email" placeholder="User Id" className="email"onChange={(e)=> {setLogin({...login, email: e.target.value})}} ></input>
+          <input type="password" placeholder="password" className="password" onChange={(e)=> {setLogin({...login, password: e.target.value})}} ></input>
+          <button className="signin" onClick={handleLogin}>Sign in</button>
+          <a href={"./signup"} className="signup" onClick={Signup}>Sign Up</a>
+        </div>
     </div>
     </>
     

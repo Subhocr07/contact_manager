@@ -1,64 +1,57 @@
-   .container{
+.container{
     position: relative;
     width: 1728px;
     height: 1117px;
-      
+    
     background: #FFFFFF;
     }
-    .container-1{
-    position: absolute;
-    width: 1600px;
-    height: 1000px;
-    left: 164px;
-    top: 200px;
-    opacity: 0.8;
-    
-    background: #CEF3FF;
-    box-shadow: 0px 4px 22px #B2DFFF;
-    border-radius: 20px;
-    }
-    .elipise_up{
-    /* Ellipse 31 */
-    
+    .elipse-up{
     position: absolute;
     width: 300px;
     height: 300px;
     left: -45px;
     top: -44px;
-    
-    
     }
-    .elipise_down{
-      display: flex;
-      flex-direction: row;
+    .elipse-down{
+      position: absolute;
       width: 300px;
       height: 300px;
-      left: -4000px;
-      top: -868.94px;
+      left: 1827px;
+      top: 868.94px;
     }
+    .container-2{
+    position: absolute;
+    width: 1710px;
+    height: 870px;
+    left: 164px;
+    top: 158px;
     
-    .box{
+    background:  #ade8fc;
+    opacity: 0.50;
+    box-shadow: 0px 4px 22px #B2DFFF;
+    border-radius: 20px;
+    }
+    .box-down{
+    position: absolute;
+    width: 178px;
+    height: 150.62px;
+    left: 204px;
+    top: 600px;
+    }
+    .box-up{
     position: absolute;
     width: 178px;
     height: 150.62px;
     left: 1326px;
     top: 198px;
     }
-    .box-1{
-    position: absolute;
-    width: 178px;
-    height: 150.62px;
-    left: 204px;
-    top: 747px;
-    
-    
-    }
-    h1{
+    .logo-1{
+      
     position: absolute;
     width: 92px;
     height: 18px;
-    left: 738px;
-    top: 347px;
+    left: 805px;
+    top: 200px;
     
     font-family: 'Open Sans';
     font-style: normal;
@@ -71,88 +64,84 @@
     align-items: center;
     letter-spacing: 0.25px;
     
-    color: #7D8CC4;
+    color: #5979ec;
     }
-    h3{
+    .tittle-1{
     position: absolute;
     width: 328px;
     height: 22px;
-    left: 700px;
-    top: 418px;
-        
+    left: 790px;
+    top: 300px;
+    
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
-        
-        /* identical to box height, or 147% */
+    
+    /* identical to box height, or 147% */
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.25px;
-        
+    
     color: #000000;
-        
+    
     opacity: 0.6;
     }
-    .mailid{
+    .email-1{
     box-sizing: border-box;
     
     position: absolute;
     height: 54px;
-    width:300px;
-    left: 650px;
+    left: 639px;
+    right: 639px;
+    top: 400px;
+    width: 450px;
+    
+    /* Colors/Neutral/White */
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    }
+    .password-1{
+    box-sizing: border-box;
+    
+    position: absolute;
+    height: 54px;
+    left: 639px;
     right: 639px;
     top: 500px;
+    width:450px;
     
     /* Colors/Neutral/White */
     background: #FFFFFF;
     border: 1px solid #E2E2E2;
     border-radius: 5px;
     }
-    .password-2{
+    .confrim-password-1{
     box-sizing: border-box;
     
     position: absolute;
     height: 54px;
-    width:300px;
-    left: 650px;
+    left: 639px;
     right: 639px;
     top: 600px;
+    width:450px;
     
     /* Colors/Neutral/White */
     background: #FFFFFF;
     border: 1px solid #E2E2E2;
     border-radius: 5px;
-    
     }
-    .button{
+    .signin-1{
     position: absolute;
-    width:300px;
-    height: 40px;
-    left: 650px;
-    right: 36.98%;
-    top: 79%;
-    bottom: 40%;
-    color:white;
-    /* Style */
-    background: #7D8CC4;
-    border-radius: 5px;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: bold;
-    line-height: 18px;
-    
-    
-    }
-    a{
-    position: absolute;
-    width: 57px;
-    height: 18px;
-    left: 780px;
-    top: 800px;
-    text-decoration: none;
+    left: 639px;
+    right:639px;
+    top: 700px;
+    width:450px;
+    height:40px;
+    color: white;
     
     font-family: 'Open Sans';
     font-style: normal;
@@ -160,26 +149,9 @@
     font-size: 15px;
     line-height: 18px;
     
-    /* identical to box height, or 120% */
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.25px;
     
-    color: #7D8CC4;
-    }
-.confrim_password{
-    box-sizing: border-box;
-        
-    position: absolute;
-    height: 54px;
-    width:300px;
-    left: 650px;
-    right: 639px;
-    top: 700px;
-        
-        /* Colors/Neutral/White */
-    background: #FFFFFF;
-    border: 1px solid #E2E2E2;
+    /* Style */
+    background: #7D8CC4;
     border-radius: 5px;
-        
- }
+    }
+    
