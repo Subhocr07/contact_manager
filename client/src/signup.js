@@ -26,26 +26,22 @@ const Signup =()=>{
     return(
     <>
     <div className="container">
-    <div className="elipise_up">
-      <img src={Logo} alt="elipse"></img>
-      </div>
-      
-      <div className="container-1">
-        <img src={Box} alt="box" className="box"></img>
-        <h1>LOGO</h1>
-        <h3>CREATE NEW ACCOUNT</h3>
-        <form>
-        <input type="email" placeholder="Mail Id" className="mailid" id="email" onChange={(e)=> {setSignupState({...signupState, email: e.target.value})}}></input>
-        <input type="password" placeholder="password" className="password-2" id="password"  onChange={(e)=> {setSignupState({...signupState, password: e.target.value})}}></input>
-        <input type="password" placeholder="confrim_password" className="confrim_password" id="confrim_passowrd"></input>
-        </form>
-        <button className="button" onClick={handleUserAdd} >signin</button>
-        <img src={Box} alt="box" className="box-1"></img>
-      </div>
-      <div className="elipise_down">
-      <img src={logo} alt="elipse"></img>
-      </div>
-      
+        <img src={Logo} alt="elipse-up" className="elipse-up"></img>
+        <img src={logo} alt="elipse-down" className="elipse-down"></img>
+        <div className="container-2">
+          <img src={Box} alt="box" className="box-down"></img>
+          <img src={Box} alt="box" className="box-up"></img>
+          <div className="logo-1">
+            LOGO
+          </div>
+          <div className="tittle-1">
+            Create New Account
+          </div>
+          <input type="email" placeholder="User Id" className="email-1" onChange={(e)=> {setSignupState({...signupState, email: e.target.value})}} ></input>
+          <input type="password" placeholder="password" className="password-1" onChange={(e)=> {setSignupState({...signupState, password: e.target.value})}} ></input>
+          <input type="confrim-password" placeholder="confrim-password" className="confrim-password-1"></input>
+          <button className="signin-1" onClick={handleUserAdd} >Sign in</button>
+        </div>
     </div>
     </>
     
