@@ -2,23 +2,23 @@ const express=require('express');
 const importModal=require("../modals/importSchema");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const auth=require('./auth');
 
 const router=express.Router();
 
 //post import file to DB
 router.post("/add",(req,res)=>{
-    // console.log(req.headers.authorization,req.body);
+    console.log(req.headers.authorization,req.body);
     try{
         // const verified=jwt.verify(req.headers.authorization,process.env.SECRET_KEY);
         importModal.create({
-            username:req.body.username,
-            userId:req.body.userId,
-            name:req.body.name,
-            designation:req.body.designation,
-            company:req.body.company,
-            industry:req.body.industry,
-            email:req.body.email,
-            phone_number:req.body.phone_number,
+            // userId:req.user._id,
+            name:req.body.Name,
+            designation:req.body.Designation,
+            company:req.body.Company,
+            industry:req.body.Industry,
+            email:req.body.Email,
+            phone_number:req.body.Phone_number,
             country:req.body.country,
         }).then(()=>{
             res.status(200).send("imported successfully")
@@ -30,7 +30,7 @@ router.post("/add",(req,res)=>{
     }
 });
 
-router.delete("/delete/:id",(req,res)=>{
+router.delete("/delete/:id",auth,(req,res)=>{
     /*console.log(req.params)*/
         importModal.deleteOne({userId:req.params.id}).then((data)=>{
             // console.log(data)

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"),Schema = mongoose.Schema
 
 const signupSchema = new mongoose.Schema({
     email: {
@@ -11,7 +11,11 @@ const signupSchema = new mongoose.Schema({
         required: true,
         unique: true
         
-    }
+    },    
+    userId:[{
+        type:Schema.Types.ObjectId, 
+        ref:'Imports'
+    }]
 });
-const signupModal = mongoose.model("usersignup", signupSchema);
+const signupModal = mongoose.model("Usersignup", signupSchema);
 module.exports = signupModal;
