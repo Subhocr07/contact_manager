@@ -41,7 +41,10 @@ const Fileupload = () => {
     }
     reader.readAsText(file);
   }
-  console.log((csvArray))
+  for(let i=0;i<csvArray.length;i++){
+      let a=csvArray[i];
+      console.log(a)
+  }
 
 
 
