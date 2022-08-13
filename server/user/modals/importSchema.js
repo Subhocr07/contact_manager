@@ -3,36 +3,40 @@ const mongoose=require('mongoose'),Schema = mongoose.Schema;
 
 
 const importSchema=new mongoose.Schema({
-    name:{
-        type:String,
-        // required:true,
-    },
-    designation:{
-        type:String,
-        // required:true,
-    },
-    company:{
-        type:String,
-        // required:true,
-    },
-    industry:{
-        type:String,
-        // required:true,
-    },
-    phone_number:{
-        type:Number,
-        // required:true,
-    },
-    country:{
-        type:String,
-        // required:true,
-    },
-    importedById:{
-        type: Schema.Types.ObjectId,
-        ref: "Usersignup"
+    contact: [{
+        name: {
+          type: String,
+          required: true,
+        },
+        designation: {
+          type: String,
+          required: true,
+        },
+        company: {
+          type: String,
+          required: true,
+        },
+        industry: {
+          type: String,
+          required: true,
+        },
+        email: String,
+        phoneNumber: {
+          type: String,
+          required: true,
+          minLength: 10,
+        },
+        country: {
+          type: String,
+          required: true,
+        },
+        
+      },
       
-    },
-    date: { type: Date, default: Date.now },
+      
+    ],
+    
+    userId: String,
 });
 
 const importModal=mongoose.model("Import",importSchema);

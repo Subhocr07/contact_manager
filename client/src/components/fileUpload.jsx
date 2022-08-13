@@ -42,7 +42,7 @@ const Fileupload = () => {
     reader.readAsText(file);
   }
   for(let i=0;i<csvArray.length;i++){
-      let a=csvArray[i];
+      let a=csvArray[i].Name;
       console.log(a)
   }
 
@@ -81,6 +81,30 @@ const Fileupload = () => {
                   <br />
                   <br />
                   <button onClick={handleSubmit}>Send</button>
+                  <div className='Table'>
+                    
+                     <table>
+                      <tr>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Company</th>
+                      </tr>
+                      {
+                        csvArray.map((user,i)=>{
+                              return(
+                                
+                                  <tr key={i}>
+                                        <td>{csvArray[i].Name}</td>
+                                        <td>{csvArray[i].Designation}</td>
+                                        <td>{csvArray[i].Company}</td>
+                                  </tr>
+                               
+                              )
+                        })
+                      }
+                     </table>
+
+                  </div>
                   {csvArray.length>0 ? null:null}
           </div>
         </div>
