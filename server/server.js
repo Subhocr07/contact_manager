@@ -70,9 +70,9 @@ server.post("/signup", async (req,res)=> {
 }
 });
 server.post("/login", (req, res)=> {
-    signupModal.find({email: req.body.email}).then((user)=> {
-        if(user.length) {
-            bcrypt.compare(req.body.password, user[0].password).then((match)=> {
+    signupModal.findOne({email: req.body.email}).then((user)=> {
+        if(user) {
+            bcrypt.compare(req.body.password, user.password).then((match)=> {
                 if(match) {
                    
                     const authToken = jwt.sign(req.body.email, process.env.SECRET_KEY);

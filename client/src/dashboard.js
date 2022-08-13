@@ -34,6 +34,8 @@ function Dashboard() {
         <input type="search" placeholder="Search by EmailId..." className="Searchbar"></input>
 
     </div>
+
+    
     <div className="table">
       
     </div>
