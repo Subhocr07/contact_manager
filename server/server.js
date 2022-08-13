@@ -9,7 +9,8 @@ const cors = require("cors");
 
 const importController=require("./user/routes/import");
 const checkExistingUser=require("./user/utility")
-const signupModal=require("./user/modals/signup-model")
+const signupModal=require("./user/modals/signup-model");
+const requirelogin=require("./user/routes/requirelogin");
 
 
 
@@ -46,6 +47,10 @@ server.get("/",(req,res)=>{
     res.send("contact manager app started")
 })
 
+server.get('/protected',requirelogin,(req,res)=>{
+    res.send("protected route")
+});
+
 
 
 const salt = 10;
@@ -71,6 +76,7 @@ server.post("/login", (req, res)=> {
                 if(match) {
                    
                     const authToken = jwt.sign(req.body.email, process.env.SECRET_KEY);
+                    //const authToken = jwt.sign({_id:user._id}, process.env.SECRET_KEY);
                     res.status(200).send({authToken});
                 } else {
                     res.status(400).send("Invalid password")

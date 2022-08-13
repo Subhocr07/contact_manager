@@ -1,5 +1,4 @@
-const mongoose=require('mongoose'),Schema = mongoose.Schema
-;
+const mongoose=require('mongoose'),Schema = mongoose.Schema;
 // const User=require("./signup-model");
 
 
@@ -28,9 +27,9 @@ const importSchema=new mongoose.Schema({
         type:String,
         // required:true,
     },
-    userId:{
+    importedById:{
         type: Schema.Types.ObjectId,
-        ref: 'usersignups'
+        ref: "Usersignup"
       
     },
     date: { type: Date, default: Date.now },

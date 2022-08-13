@@ -12,9 +12,9 @@ const signupSchema = new mongoose.Schema({
         unique: true
         
     },    
-    userId:[{
+    uploadId:[{
         type:Schema.Types.ObjectId, 
-        ref:'Imports'
+        ref:"Import"
     }]
 });
 const signupModal = mongoose.model("Usersignup", signupSchema);
