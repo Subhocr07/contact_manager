@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import {store} from '../Table/contact'
 import {useDropzone} from 'react-dropzone'
 import axios from "axios"
@@ -8,7 +8,6 @@ import Vector_7 from "../asserts/Vector(3).png"
 
 
 function ImportCsv() {
- const[arr , setArr]= useState()
 const[popup, setpopup] = useContext(store)
 
 const ProcessCsv= async (str)=>{
@@ -39,7 +38,7 @@ const ProcessCsv= async (str)=>{
     console.log(e, "Hello")}
   
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = (acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader()
 
@@ -54,7 +53,7 @@ const ProcessCsv= async (str)=>{
       reader.readAsText(file)
     })
     
-  }, [])
+  }
   const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   return (popup === 1)?(

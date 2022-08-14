@@ -18,8 +18,8 @@ function Contacts() {
   const [popup, setpopup] = useState(0); // for popup
   const [getarr, setGetArr] = useState([]); // for getting data from backend
   const [isChecked, setisChecked] = useState([]); // for deleting the contacts
-  const [del, setDelete] = useState(0)
-  const [inputText, setInputtext] = useState('');//for filter conditions
+  
+  const [setInputtext] = useState('');//for filter conditions
 
   //dropdown work
   const [value, setValue] = useState(""); // for dropdown on search
@@ -268,7 +268,7 @@ function Contacts() {
                           setpopup(3)
                           setisChecked([element._id])
                           console.log(isChecked)
-                          console.log('vijay', e.target.id)
+                          console.log('parithi', e.target.id)
                         }}><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 19.375H4C3.50272 19.375 3.02581 19.1775 2.67417 18.8258C2.32254 18.4742 2.125 17.9973 2.125 17.5V5.625C2.125 5.45924 2.19085 5.30027 2.30806 5.18306C2.42527 5.06585 2.58424 5 2.75 5C2.91576 5 3.07473 5.06585 3.19194 5.18306C3.30915 5.30027 3.375 5.45924 3.375 5.625V17.5C3.375 17.6658 3.44085 17.8247 3.55806 17.9419C3.67527 18.0592 3.83424 18.125 4 18.125H14C14.1658 18.125 14.3247 18.0592 14.4419 17.9419C14.5592 17.8247 14.625 17.6658 14.625 17.5V5.625C14.625 5.45924 14.6908 5.30027 14.8081 5.18306C14.9253 5.06585 15.0842 5 15.25 5C15.4158 5 15.5747 5.06585 15.6919 5.18306C15.8092 5.30027 15.875 5.45924 15.875 5.625V17.5C15.875 17.9973 15.6775 18.4742 15.3258 18.8258C14.9742 19.1775 14.4973 19.375 14 19.375Z" fill="#F81D1D" />
                             <path d="M16.5 4.375H1.5C1.33424 4.375 1.17527 4.30915 1.05806 4.19194C0.940848 4.07473 0.875 3.91576 0.875 3.75C0.875 3.58424 0.940848 3.42527 1.05806 3.30806C1.17527 3.19085 1.33424 3.125 1.5 3.125H16.5C16.6658 3.125 16.8247 3.19085 16.9419 3.30806C17.0592 3.42527 17.125 3.58424 17.125 3.75C17.125 3.91576 17.0592 4.07473 16.9419 4.19194C16.8247 4.30915 16.6658 4.375 16.5 4.375Z" fill="#F81D1D" />
