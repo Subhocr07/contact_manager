@@ -13,7 +13,7 @@ const signupModal=require("./modals/signup-model");
 
 
 //server listen
-const PORT=3001;
+const PORT=3032;
 
 server.listen(PORT,(err)=>{
     if(!err) {
@@ -56,7 +56,7 @@ server.post("/signup",(req,res)=> {
         else {
             if (password==cpassword) {
                 bcrypt.hash(password,10).then((hashpassword)=> {
-                    signupModal.create({
+                    Model.create({
                         email:email,
                         password:hashpassword
                     }).then((data)=> {
@@ -96,4 +96,3 @@ server.post("/login", (req, res)=> {
 });
 
 server.use('/user',contactRoute)
-

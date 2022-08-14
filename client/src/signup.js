@@ -20,7 +20,7 @@ const Signup =()=>{
         e.preventDefault()
         axios({
             method:"POST",
-            url:'http://localhost:3001/signup',
+            url:'http://localhost:3032/signup',
             data:data
         }).then((user)=> {
                 window.alert(user.data)
