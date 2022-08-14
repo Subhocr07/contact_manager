@@ -19,7 +19,7 @@ function Contacts() {
   const [getarr, setGetArr] = useState([]); // for getting data from backend
   const [isChecked, setisChecked] = useState([]); // for deleting the contacts
   
-  const [setInputtext] = useState('');//for filter conditions
+  const [inputText, setInputtext] = useState('');//for filter conditions
 
   //dropdown work
   const [value, setValue] = useState(""); // for dropdown on search
