@@ -20,7 +20,7 @@ const Signup =()=>{
         e.preventDefault()
         axios({
             method:"POST",
-            url:'http://localhost:3032/signup',
+            url:'https://contact-manager-server-10x.herokuapp.com/signup',
             data:data
         }).then((user)=> {
                 window.alert(user.data)
