@@ -13,7 +13,7 @@ const signupModal=require("./modals/signup-model");
 
 
 //server listen
-const PORT=3032;
+const PORT=process.env.PORT ||3032;
 
 server.listen(PORT,(err)=>{
     if(!err) {

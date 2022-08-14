@@ -27,7 +27,7 @@ const ProcessCsv= async (str)=>{
   const onChange=(e)=>{ 
     const authToken = localStorage.getItem('user')
     axios({
-      url:"http://localhost:3032/user/add",
+      url:"https://contact-manager-server-10x.herokuapp.com/user/add",
       method:"POST",
       headers:{
         authorization:authToken

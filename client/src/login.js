@@ -31,7 +31,7 @@ const Login =()=>{
             headers:{
                 // auth: localStorage.setItem('user')
             },
-            url:"http://localhost:3032/login",
+            url:"https://contact-manager-server-10x.herokuapp.com/login",
             data:data
         }).then((token)=> {
             console.log('Hello',token.data)
