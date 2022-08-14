@@ -1,5 +1,5 @@
 import React , {useContext} from 'react';
-import './style-1.css';
+import './Delete.css';
 import { store } from '../Table/contact';
 import axios from 'axios';
 
