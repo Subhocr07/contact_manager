@@ -7,10 +7,8 @@ require('dotenv').config();
 const bcrypt = require("bcryptjs")
 const cors = require("cors");
 
-const importController=require("./user/routes/import");
-const checkExistingUser=require("./user/utility")
-const signupModal=require("./user/modals/signup-model");
-const requirelogin=require("./user/routes/requirelogin");
+const contactRoute = require('./Router/user-router')
+const signupModal=require("./modals/signup-model");
 
 
 
@@ -43,50 +41,59 @@ mongoose.connect("mongodb+srv://sougata:project%40123@contactmanager.utz7mbi.mon
 
 //get route
 
-server.get("/",(req,res)=>{
-    res.send("contact manager app started")
+
+server.post("/signup",(req,res)=> {
+    let {email, password, cpassword}=req.body
+
+    if (!email || !password || !cpassword) {
+        return res.status(400).send('Please Fill the Field')
+    }
+
+    signupModal.findOne({email:email}).then((exist)=> {
+        if(exist) {
+            return res.status(400).send("User Already Exist")
+        }
+        else {
+            if (password==cpassword) {
+                bcrypt.hash(password,10).then((hashpassword)=> {
+                    signupModal.create({
+                        email:email,
+                        password:hashpassword
+                    }).then((data)=> {
+                        res.status(200).send("User Successfully Created")
+                    })
+                })
+            }
+            else {
+                return res.status(400).send("Password Mismatch")
+            }
+        }
+    })
 })
 
-server.get('/protected',requirelogin,(req,res)=>{
-    res.send("protected route")
-});
-
-
-
-const salt = 10;
-server.post("/signup", async (req,res)=> {
-    if(await checkExistingUser(req.body.email)){
-        res.status(400).send("username  exit. please try with different username")
-    }else{
-    bcrypt.genSalt(salt, (err,hashSalt)=> {
-        bcrypt.hash(req.body.password, hashSalt, (err, passwordHash)=> {
-            signupModal.create({email: req.body.email, password: passwordHash}).then(()=> {
-                res.status(200).send(`${req.body.email} added successfully`);
-            }).catch((err)=> {
-                res.status(400).send(err);
-            })
-        })
-    })
-}
-});
 server.post("/login", (req, res)=> {
-    signupModal.find({email: req.body.email}).then((user)=> {
-        if(user.length) {
-            bcrypt.compare(req.body.password, user[0].password).then((match)=> {
-                if(match) {
-                   
-                    const authToken = jwt.sign(req.body.email, process.env.SECRET_KEY);
-                    //const authToken = jwt.sign({_id:user._id}, process.env.SECRET_KEY);
-                    res.status(200).send({authToken});
-                } else {
-                    res.status(400).send("Invalid password")
+    let { email, password}=req.body
+
+    if (!email || !password) {
+        return res.status(400).send("Please Fill Your Login Details")
+    }
+
+    signupModal.findOne({email:email}).then((exist)=>{
+    
+        if (exist) {
+            bcrypt.compare(password,exist.password).then((check)=> {
+                if (check){
+                    const token = jwt.sign(exist.email , process.env.SECRET_KEY)
+                    res.status(200).send(token)
+                }else {
+                    return res.status(400).send("Invalid User Credentials")
                 }
-            });
-        } else {
-            res.status(400).send("User Not Exist")
+            })
+        }else {
+            return res.status(400).send("User Does Not Exist")
         }
     })
 });
 
-server.use("/import",importController);
+server.use('/user',contactRoute)
 

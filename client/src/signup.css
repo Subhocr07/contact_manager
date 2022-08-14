@@ -1,4 +1,4 @@
-.container{
+  .container{
     position: relative;
     width: 1728px;
     height: 1117px;
@@ -104,7 +104,7 @@
     border: 1px solid #E2E2E2;
     border-radius: 5px;
     }
-    .password-1{
+    .form-control{
     box-sizing: border-box;
     
     position: absolute;
@@ -119,7 +119,7 @@
     border: 1px solid #E2E2E2;
     border-radius: 5px;
     }
-    .confrim-password-1{
+    #confrim-password-1{
     box-sizing: border-box;
     
     position: absolute;
@@ -134,11 +134,12 @@
     border: 1px solid #E2E2E2;
     border-radius: 5px;
     }
+    
     .signin-1{
     position: absolute;
     left: 639px;
     right:639px;
-    top: 700px;
+    top: 750px;
     width:450px;
     height:40px;
     color: white;

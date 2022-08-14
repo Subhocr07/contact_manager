@@ -1,11 +1,4 @@
-.post{
-    position: relative;
-    width: 1728px;
-    height: 1117px;
-    
-    background: #FFFFFF;
-    }
-    .sidebar{
+.sidebar{
     /* Rectangle 29 */
     
     /* Rectangle 29 */
@@ -19,7 +12,7 @@
     background: #CEF3FF;
     
     }
-    .logo-2{
+    .logo-7{
     position: absolute;
     width: 83px;
     height: 61px;
@@ -124,54 +117,7 @@
     line-height: 27px;
     
     color: #000000;
+    background-color:#CEF3FF ;
     
     opacity: 0.8;
-    }
-    .Header{
-    position: absolute;
-    width: 1497px;
-    height: 98px;
-    left: 231px;
-    top: 0px;
-    
-    background: #FFFFFF;
-    }
-    .tittle-2{
-    position: absolute;
-    width: 194px;
-    height: 49px;
-    left: 24px;
-    top: 25px;
-    
-    font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 49px;
-    
-    /* identical to box height */
-    
-    color: #454545;
-    
-    opacity: 0.8;
-    }
-    .Searchbar{
-        position: absolute;
-        width: 522px;
-        height: 50px;
-        left: 885px;
-        top: 24px;
-        
-        background: #F2F2F2;
-        border-radius: 6px;
-    }
-    .table{
-    position: absolute;
-    width: 1449px;
-    height: 898px;
-    left: 255px;
-    top: 124px;
-    
-    background: #FBFBFB;
-    border-radius: 15px;
     }
