@@ -1,5 +1,5 @@
 import React , {useContext} from 'react';
-import './style.css';
+import './style-1.css';
 import { store } from '../Table/contact';
 import axios from 'axios';
 
@@ -8,14 +8,14 @@ const Delete = (props) => {
     
     const deleteHandler=()=>{
         
-        const DelArr = props.value.map((element,i)=>{
+        const DelArr = props.value.map((element,_id)=>{
             return {'_id': element};
         })
         console.log(props.value)
         const authToken = localStorage.getItem('user')
         axios({
             method:"POST",
-            url:"https://contactmanager-server.herokuapp.com/user/delete",
+            url:"http://localhost:3032/user/delete",
             headers:{
                 authorization:authToken
             },

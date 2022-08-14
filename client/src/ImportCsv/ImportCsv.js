@@ -3,6 +3,7 @@ import {store} from '../Table/contact'
 import {useDropzone} from 'react-dropzone'
 import axios from "axios"
 import './style.css'
+import Vector_7 from "../asserts/Vector(3).png"
 
 
 
@@ -27,7 +28,7 @@ const ProcessCsv= async (str)=>{
   const onChange=(e)=>{ 
     const authToken = localStorage.getItem('user')
     axios({
-      url:"http://localhost:3001/user/add",
+      url:"http://localhost:3032/user/add",
       method:"POST",
       headers:{
         authorization:authToken
@@ -59,7 +60,8 @@ const ProcessCsv= async (str)=>{
   return (popup === 1)?(
     <div className='csv-file'>
     <div {...getRootProps()} className="fileSelect">
-    <p className='upload_file'><i className="material-icons">upload_file</i></p>
+    <div className='upload_file'></div>
+    <img src={Vector_7} alt="import"></img>
       <h3>Import File</h3>
       <input {...getInputProps()}/>
       <p className='drop'>Drag & Drop a CSV File to</p>

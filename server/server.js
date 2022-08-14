@@ -56,7 +56,7 @@ server.post("/signup",(req,res)=> {
         else {
             if (password==cpassword) {
                 bcrypt.hash(password,10).then((hashpassword)=> {
-                    Model.create({
+                    signupModal.create({
                         email:email,
                         password:hashpassword
                     }).then((data)=> {
