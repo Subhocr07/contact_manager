@@ -39,18 +39,20 @@ const Pagination = ({ showPerPage, onPaginationChange, total }) => {
             >
               <img src={vector_10} alt="rightarrow"></img>
             </div>
-
+        <ul className="buttons">
           {new Array(numberOfButtons).fill("").map((el, index) => (
-            <div className={`page-item ${index + 1 === counter ? "active" : null}`}>
+            <li className={`page-item ${index + 1 === counter ? "active" : el}`}>
               <div
-                className="page-link"
+                className="page-link-1"
                 
                 onClick={() => setCounter(index + 1)}
               >
                 {index + 1}
               </div>
-            </div>
+            </li>
+            
           ))}
+          </ul>
           <div className="page-item"  onClick={() => onButtonClick("next")}>
             <img src={vector_11} alt="arrow"></img>
             </div>

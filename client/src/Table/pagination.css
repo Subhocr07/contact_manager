@@ -1,15 +1,15 @@
 .pagination-container{
     position: absolute;
-    width: 117px;
+    width: 200px;
     height: 24px;
-    left: 1587px;
-    top: 1042px;
+    left: 1200px;
+    top: 700px;
     
     
 }
 .page-link{
 position: absolute;
-left: 92.32%;
+left: 90%;
 right: 7.21%;
 top: 94.92%;
 bottom: 3.88%;
@@ -21,8 +21,8 @@ background: #4D4D4D;
 position: absolute;
 width: 9px;
 height: 24px;
-left: 1605px;
-top: 1042px;
+left: 90px;
+top: 200px;
 
 font-family: 'Titillium Web';
 font-style: normal;
@@ -35,7 +35,7 @@ color: #2DA5FC;
 
 .page-item{
 position: absolute;
-left: 97.8%;
+left:150%;
 right: 1.72%;
 top: 93.73%;
 bottom: 5.08%;
