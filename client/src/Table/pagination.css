@@ -2,14 +2,14 @@
     position: absolute;
     width: 200px;
     height: 24px;
-    left: 1200px;
+    left: 1400px;
     top: 700px;
     
     
 }
 .page-link{
 position: absolute;
-left: 90%;
+left: 60%;
 right: 7.21%;
 top: 94.92%;
 bottom: 3.88%;
@@ -21,8 +21,8 @@ background: #4D4D4D;
 position: absolute;
 width: 9px;
 height: 24px;
-left: 90px;
-top: 200px;
+left: 1000px;
+top: 1042px;
 
 font-family: 'Titillium Web';
 font-style: normal;
@@ -35,9 +35,9 @@ color: #2DA5FC;
 
 .page-item{
 position: absolute;
-left:150%;
+left: 97.8%;
 right: 1.72%;
-top: 93.73%;
+top: 70%;
 bottom: 5.08%;
 
 background: #4D4D4D;

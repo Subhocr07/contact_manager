@@ -238,8 +238,7 @@ function Contacts() {
                 // console.log("yes")
                  return (el.email.toLowerCase().includes(value))
               // }
-            }).slice(pagination.start, pagination.end)
-                .map((element, i) => {
+            }).slice(pagination.start, pagination.end).map((element, i) => {
 
                   return (
                     <tr key={i} className="row3">
