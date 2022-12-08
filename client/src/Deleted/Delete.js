@@ -15,7 +15,7 @@ const Delete = (props) => {
         const authToken = localStorage.getItem('user')
         axios({
             method:"POST",
-            url:"https://contact-manager-server-10x.herokuapp.com/user/delete",
+            url:"https://http-nodejs-production-2d4d.up.railway.app/user/delete",
             headers:{
                 authorization:authToken
             },
