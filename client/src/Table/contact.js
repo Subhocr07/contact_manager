@@ -50,7 +50,7 @@ function Contacts() {
     const authToken = localStorage.getItem("user");
     axios({
       method: "GET",
-      url: "https://contact-manager-server-10x.herokuapp.com/user/",
+      url: "https://http-nodejs-production-2d4d.up.railway.app/user/",
       headers: {
         authorization: authToken,
       },

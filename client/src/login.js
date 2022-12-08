@@ -31,7 +31,7 @@ const Login =()=>{
             headers:{
                 // auth: localStorage.setItem('user')
             },
-            url:"https://contact-manager-server-10x.herokuapp.com/login",
+            url:"https://http-nodejs-production-2d4d.up.railway.app//login",
             data:data
         }).then((token)=> {
             console.log('Hello',token.data)
