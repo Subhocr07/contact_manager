@@ -15,7 +15,7 @@ const Delete = (props) => {
         const authToken = localStorage.getItem('user')
         axios({
             method:"POST",
-            url:"https://http-nodejs-production-2d4d.up.railway.app/user/delete",
+            url:"http://localhost:3032/user/delete",
             headers:{
                 authorization:authToken
             },
