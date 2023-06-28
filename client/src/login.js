@@ -30,7 +30,7 @@ const Login = () => {
       headers: {
         // auth: localStorage.setItem('user')
       },
-      url: "http://localhost:3032/login",
+      url: "https://contact-sibu.onrender.com/login",
       data: data,
     })
       .then((token) => {
@@ -39,7 +39,7 @@ const Login = () => {
         navigate("/dashboard");
       })
       .catch((err) => {
-        window.alert(err.response.data); 
+        window.alert(err.response.data);
       });
   };
 
