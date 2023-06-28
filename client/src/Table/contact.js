@@ -50,7 +50,7 @@ function Contacts() {
     const authToken = localStorage.getItem("user");
     axios({
       method: "GET",
-      url: "https://http-nodejs-production-2d4d.up.railway.app/user/",
+      url: "http://localhost:3032/user/",
       headers: {
         authorization: authToken,
       },

@@ -20,7 +20,7 @@ const Signup =()=>{
         e.preventDefault()
         axios({
             method:"POST",
-            url:'https://http-nodejs-production-2d4d.up.railway.app//signup',
+            url:'http://localhost:3032/signup',
             data:data
         }).then((user)=> {
                 window.alert(user.data)
