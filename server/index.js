@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const contactRoute = require("./Router/user-router");
 const signupModal = require("./modals/signup-model");
+require("dotenv").config();
 
 //server listen
 const PORT = process.env.PORT || 3032;
@@ -26,16 +27,13 @@ server.use(express.urlencoded({ extended: false }));
 server.use(cors());
 //database connection
 
-mongoose.connect(
-  "mongodb+srv://sougataganguly17:ycWl0vlDTiOK74zD@bluehorse.fzidiyu.mongodb.net/contactManager",
-  (err) => {
-    if (!err) {
-      console.log(`server connected at db`);
-    } else {
-      console.log(err);
-    }
+mongoose.connect(process.env.URi, (err) => {
+  if (!err) {
+    console.log(`server connected at db`);
+  } else {
+    console.log(err);
   }
-);
+});
 
 //get route
 
