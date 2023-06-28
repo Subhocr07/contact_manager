@@ -27,7 +27,7 @@ server.use(express.urlencoded({ extended: false }));
 server.use(cors());
 //database connection
 
-mongoose.connect(process.env.URi, (err) => {
+mongoose.connect(process.env.URI, (err) => {
   if (!err) {
     console.log(`server connected at db`);
   } else {
